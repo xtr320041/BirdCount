@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:layout_gravity="center"
+	android:orientation="vertical" tools:context="nz.govt.doc.birdcount.BirdCountDetail">
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="horizontal"
+		android:paddingLeft="0dp">
+
+		<LinearLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:orientation="horizontal"
+			android:paddingTop="0dp">
+			<Button android:id="@+id/startBtn" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:textSize="22sp"
+				android:onClick="startBird" android:textStyle="bold" android:text="Start" />
+
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:paddingLeft="10dp"
+				android:paddingTop="5dp" android:text="TIMER: " />
+			<TextView android:id="@+id/counterTimer" android:textSize="22sp"
+				android:textStyle="bold" android:layout_width="100dp"
+				android:layout_height="wrap_content" android:paddingLeft="10dp"
+				android:paddingTop="5dp" android:text="" />
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:gravity="right"
+			android:orientation="horizontal">
+			<Button android:id="@+id/resetBtn" android:layout_gravity="right" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:textSize="22sp"
+				android:textStyle="bold" android:onClick="resetBird" android:text="Reset" />
+		</LinearLayout>
+	</LinearLayout>
+	<LinearLayout android:id="@+id/layoutForScroll"
+		android:orientation="vertical" android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="horizontal"
+			android:paddingTop="5dp" android:focusable="true"
+			android:focusableInTouchMode="true">
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:paddingLeft="10dp"
+				android:paddingTop="5dp" android:text="SPECIES" />
+			<EditText android:id="@+id/speciesTxt"
+				android:layout_height="wrap_content" android:layout_weight="1.00"
+				android:textStyle="bold"  android:textSize="22sp"
+				android:layout_width="80dp" android:maxLines="1" android:inputType="text" android:paddingTop="1dp" />
+			<Button android:layout_gravity="right" android:layout_width="wrap_content"
+				android:layout_height="40dp" android:textSize="15sp"
+				android:onClick="resetBirdName" android:text="Clear" />
+		</LinearLayout>
+
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="horizontal"
+			android:paddingTop="5dp">
+
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="DISTANCE (metres)"
+				android:paddingTop="5dp" android:paddingLeft="10dp" />
+
+			<RadioGroup android:id="@+id/distanceA"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<RadioButton android:id="@+id/distance0" android:text="0-8"
+				    android:textStyle="bold"  android:textSize="18sp"
+					android:checked="true" />
+				<RadioButton android:id="@+id/distance1" android:text="9-16" 
+				    android:textStyle="bold"  android:textSize="18sp"/>
+
+				<RadioButton android:id="@+id/distance2" android:text="17-25" 
+				    android:textStyle="bold"  android:textSize="18sp"/>
+
+			</RadioGroup>
+		</LinearLayout>
+
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="horizontal"
+			android:paddingTop="5dp">
+
+			<RadioGroup android:id="@+id/distanceB"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:orientation="horizontal" android:paddingLeft="100dp">
+
+				<RadioButton android:id="@+id/distance3" android:text="26-45" 
+				    android:textStyle="bold"  android:textSize="18sp"/>
+				<RadioButton android:id="@+id/distance4" android:text="46-100" 
+				    android:textStyle="bold"  android:textSize="18sp"/>
+				<RadioButton android:id="@+id/distance5" android:text="&gt;100" 
+				    android:textStyle="bold"  android:textSize="18sp"/>
+			</RadioGroup>
+		</LinearLayout>
+
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="horizontal"
+			android:paddingTop="15dp">
+
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="CLUST. SIZE"
+				android:paddingTop="5dp" android:paddingLeft="10dp" />
+
+			<RadioGroup android:id="@+id/size" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:orientation="horizontal">
+
+				<RadioButton android:id="@+id/size1" android:text="1"
+					android:checked="true" android:textStyle="bold"  android:textSize="22sp"/>
+				<RadioButton android:id="@+id/size2" android:text="2" 
+				    android:textStyle="bold"  android:textSize="18sp"/>
+
+				<RadioButton android:id="@+id/size3" android:text="3" 
+				    android:textStyle="bold"  android:textSize="18sp"/>
+
+				<RadioButton android:id="@+id/size4" android:text="4" 
+				    android:textStyle="bold"  android:textSize="18sp"/>
+				<RadioButton android:id="@+id/size5" android:text="5" 
+				    android:textStyle="bold"  android:textSize="18sp"/>
+				<RadioButton android:id="@+id/size6" android:text="6" 
+				    android:textStyle="bold"  android:textSize="18sp"/>
+			</RadioGroup>
+		</LinearLayout>
+
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="horizontal"
+			android:paddingTop="15dp">
+
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="CLUST. PRECISION" />
+
+			<RadioGroup android:id="@+id/precision"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<RadioButton android:id="@+id/precisionA" android:text="Accurate"
+					android:checked="true" 
+					android:textStyle="bold"  android:textSize="18sp"/>
+				<RadioButton android:id="@+id/precisionE" android:text="Estimate" 
+				    android:textStyle="bold"  android:textSize="18sp"/>
+			</RadioGroup>
+		</LinearLayout>
+
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="horizontal"
+			android:paddingTop="5dp">
+
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:paddingLeft="10dp"
+				android:paddingTop="0dp" android:text="COMMENTS" />
+			<EditText android:id="@+id/comment" android:layout_width="0dp"
+				android:layout_height="wrap_content" android:layout_weight="0.50"
+				android:paddingLeft="10dp" android:paddingTop="0dp" />
+		</LinearLayout>
+
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="horizontal"
+			android:paddingTop="5dp">
+			<Button android:id="@+id/saveBtn" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:layout_gravity="center"
+				android:textSize="22sp" android:textStyle="bold" android:text="Name that bird ..."
+				android:onClick="saveBird" />
+		</LinearLayout>
+	</LinearLayout>
+
+
+	<LinearLayout android:layout_width="match_parent"
+		android:layout_height="match_parent" android:orientation="vertical" android:paddingTop="15dp">
+
+		<ListView android:id="@+id/birdCountList"
+			android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+	</LinearLayout>
+
+</LinearLayout>
+
